@@ -164,6 +164,10 @@ footer {
   font-size: 15px;
 }
 
+ul {
+  list-style-type: none;
+}
+
 .participants-section.no-participants {
   background-color: #f9f9f9;
   color: #888;

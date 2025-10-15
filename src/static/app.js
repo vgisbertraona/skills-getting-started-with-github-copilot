@@ -82,6 +82,8 @@ document.addEventListener("DOMContentLoaded", () => {
         messageDiv.textContent = result.message;
         messageDiv.className = "success";
         signupForm.reset();
+        // Actualizar la lista de actividades después de un registro exitoso
+        fetchActivities();
       } else {
         messageDiv.textContent = result.detail || "An error occurred";
         messageDiv.className = "error";
@@ -100,6 +102,12 @@ document.addEventListener("DOMContentLoaded", () => {
       console.error("Error signing up:", error);
     }
   });
+
+  // Function to remove a participant
+  window.removeParticipant = function(button) {
+    const listItem = button.parentElement;
+    listItem.remove();
+  };
 
   // Initialize app
   fetchActivities();
